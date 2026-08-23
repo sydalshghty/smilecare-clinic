@@ -1,0 +1,22 @@
+@import "tailwindcss";
+:root {
+  --bg1: #F7F9FB;
+  --textcolor1: #00355F;
+  --linkcolor: #42474F;
+  --bgsection: #F2F4F6;
+}
+ul{
+  list-style: none;
+}
+.container{
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (max-width: 768px){
+  .container{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
