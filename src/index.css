@@ -20,3 +20,10 @@ ul{
     padding-right: 20px;
   }
 }
+/*Start Header Style*/
+header .container ul li a{
+  transition: color 0.5s ease;
+}
+header .container ul li:hover a{
+  color: var(--textcolor1);
+}
