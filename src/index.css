@@ -27,3 +27,28 @@ header .container ul li a{
 header .container ul li:hover a{
   color: var(--textcolor1);
 }
+header .container ul li a.active{
+  color: var(--textcolor1);
+}
+@media (min-width: 992px){
+  header .container .col-bars,
+  header .container .doctor-img{
+    display: none;
+  }
+}
+@media (max-width: 992px){
+  header{
+    height: 64px;
+  }
+  header .container ul,
+  header .container .order-now{
+    display: none;
+  }
+}
+.menu-mobile{
+  transition: left 0.5s ease;
+  overflow: hidden;
+}
+.menu-mobile.show{
+  left: 0;
+}
