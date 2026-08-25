@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FaRegUser, FaBars } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import logoClinic from "../assets/logo-clinic.svg";
@@ -11,19 +11,21 @@ import aboutIcon from "../assets/about-icon.svg";
 import contactIcon from "../assets/contact-icon.svg";
 import rightIcon from "../assets/right-icon.svg";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function Header() {
+    const navigate = useNavigate("");
     const menuLinks = [
-        { id: 1, link: "الرئيسية", href: "/" },
-        { id: 2, link: "خدماتنا", href: "#" },
-        { id: 3, link: "عن العيادة", href: "#" },
-        { id: 4, link: "اتصل بنا", href: "#" }
+        { id: 1, link: "الرئيسية", icon: homeIcon, href: "/" },
+        { id: 2, link: "خدماتنا", icon: servicesIcon, href: "/services" },
+        { id: 3, link: "عن العيادة", icon: aboutIcon, href: "/about" },
+        { id: 4, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
     ]
     const [showMenu, setShowMenu] = useState(false);
     const [activeLink, setActiveLink] = useState(1);
 
     return (
         <>
-            <header className="w-full h-20 bg-(--bg1) fixed top-0 left-0">
+            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0">
                 <div className="container w-full h-full flex justify-between items-center flex-row-reverse">
                     <div className="col-bars cursor-pointer" onClick={() => {
                         setShowMenu(!showMenu);
@@ -89,49 +91,29 @@ function Header() {
                         <p className="text-[18px] text-(--textcolor1) font-semibold">عيادة الابتسامة لطب الأسنان</p>
                     </div>
                     <ul className="flex flex-col items-end gap-2 pt-4 pb-4">
-                        <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3">
-                            <Link to={`/`} className="flex flex-row-reverse gap-3" onClick={() => {
-                                setShowMenu(!showMenu);
-                            }}>
-                                <img src={homeIcon} alt="icon" />
-                                <p className="text-[17px] text-[#191C1E]">الصفحة الرئيسية</p>
-                            </Link>
-                            <img src={rightIcon} alt="icon-right" />
-                        </li>
-                        <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3">
-                            <Link to={`##`} className="flex flex-row-reverse gap-3" onClick={() => {
-                                setShowMenu(!showMenu);
-                            }}>
-                                <img src={servicesIcon} alt="icon" />
-                                <p className="text-[17px] text-[#191C1E]">خدماتنا</p>
-                            </Link>
-                            <img src={rightIcon} alt="icon-right" />
-                        </li>
-                        <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3">
-                            <Link to={`##`} className="flex flex-row-reverse gap-3" onClick={() => {
-                                setShowMenu(!showMenu);
-                            }}>
-                                <img src={aboutIcon} alt="icon" />
-                                <p className="text-[17px] text-[#191C1E]">عن العيادة</p>
-                            </Link>
-                            <img src={rightIcon} alt="icon-right" />
-                        </li>
-                        <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3">
-                            <Link to={`##`} className="flex flex-row-reverse gap-3" onClick={() => {
-                                setShowMenu(!showMenu);
-                            }}>
-                                <img src={contactIcon} alt="icon" />
-                                <p className="text-[17px] text-[#191C1E]">اتصل بنا</p>
-                            </Link>
-                            <img src={rightIcon} alt="icon-right" />
-                        </li>
+                        {menuLinks.map((link,index) => {
+                            return(
+                                <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3" key={link.id}>
+                                    <Link to={link.href} className="flex flex-row-reverse gap-3" onClick={() => {
+                                        setShowMenu(!showMenu);
+                                    }}>
+                                        <img src={link.icon} alt="icon" />
+                                        <p className="text-[17px] text-[#191C1E]">{link.link}</p>
+                                    </Link>
+                                    <img src={rightIcon} alt="icon-right" />
+                                </li>
+                            )
+                        })}
+                      
+                        
                     </ul>
-                    <button className="min-w-full h-13 bg-(--textcolor1) rounded-lg" onClick={() => {
+                    <button className="min-w-full h-13 bg-(--textcolor1) rounded-lg cursor-pointer" onClick={() => {
+                        navigate("/ordernow")
                         setShowMenu(!showMenu);
                     }}>
-                        <Link to={`##`} className="text-[18px] text-white">
+                        <p className="text-[18px] text-white">
                             احجز موعدك الآن
-                        </Link>
+                        </p>
                     </button>
                 </div>
             </div>

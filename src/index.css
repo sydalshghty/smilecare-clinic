@@ -2,6 +2,7 @@
 :root {
   --bg1: #F7F9FB;
   --textcolor1: #00355F;
+  --textcolor2: #006398;
   --linkcolor: #42474F;
   --bgsection: #F2F4F6;
 }
@@ -51,4 +52,11 @@ header .container ul li a.active{
 }
 .menu-mobile.show{
   left: 0;
+}
+/*End Header Style*/
+/*Start Menu-Mobile-Bottom Style*/
+@media (min-width: 992px){
+  .menu-mobile-bottom{
+    display: none;
+  }
 }
