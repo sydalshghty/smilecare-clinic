@@ -5,6 +5,7 @@
   --textcolor2: #006398;
   --linkcolor: #42474F;
   --bgsection: #F2F4F6;
+  --headingcolor: #191C1E;
 }
 ul{
   list-style: none;
@@ -59,4 +60,27 @@ header .container ul li a.active{
   .menu-mobile-bottom{
     display: none;
   }
+}
+/*Start Services-Section Style*/
+@media (max-width: 1100px){
+    .services-section .container .all-services{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .services-section .container .all-services .col-service{
+    width: 48%;
+  }
+}
+@media (max-width: 650px){
+  .services-section .container .all-services .col-service{
+    width: 100%;
+  }
+}
+.whyus-section .container .whyus-content .col,
+.services-section .container .all-services .col-service{
+  transition: transform 0.5s ease;
+}
+.services-section .container .all-services .col-service:hover,
+.whyus-section .container .whyus-content .col:hover{
+  transform: translateY(-15px);
 }
