@@ -84,3 +84,9 @@ header .container ul li a.active{
 .whyus-section .container .whyus-content .col:hover{
   transform: translateY(-15px);
 }
+@media (max-width: 768px){
+  .services-section .container .all-services .col-service:hover,
+  .whyus-section .container .whyus-content .col:hover{
+    transform: translateY(-8px);
+  }
+}
