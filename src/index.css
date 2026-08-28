@@ -6,6 +6,8 @@
   --linkcolor: #42474F;
   --bgsection: #F2F4F6;
   --headingcolor: #191C1E;
+  --bordercolor: #C2C7D1;
+  --starcolor: #F59E0B;
 }
 ul{
   list-style: none;
@@ -77,16 +79,42 @@ header .container ul li a.active{
   }
 }
 .whyus-section .container .whyus-content .col,
-.services-section .container .all-services .col-service{
+.services-section .container .all-services .col-service,
+.overview-clients .container .all-clients-overview .col-client{
   transition: transform 0.5s ease;
 }
 .services-section .container .all-services .col-service:hover,
-.whyus-section .container .whyus-content .col:hover{
+.whyus-section .container .whyus-content .col:hover,
+.overview-clients .container .all-clients-overview .col-client:hover{
   transform: translateY(-15px);
 }
 @media (max-width: 768px){
   .services-section .container .all-services .col-service:hover,
-  .whyus-section .container .whyus-content .col:hover{
+  .whyus-section .container .whyus-content .col:hover,
+  .overview-clients .container .all-clients-overview .col-client:hover{
     transform: translateY(-8px);
   }
+}
+/*Overview-clients-Style*/
+@media (max-width: 992px){
+  .overview-clients .container .all-clients-overview{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .overview-clients .container .all-clients-overview .col-client{
+    width: 48%;
+  }
+}
+@media (max-width: 768px){
+  .overview-clients .container .all-clients-overview .col-client{
+    width: 100%;
+  }
+}
+/*Start Questions-Style*/
+.questions-commons .container .all-common-questions .answer-question{
+  display: none;
+  transition: display 0.5s ease;
+}
+.questions-commons .container .all-common-questions .answer-question.active{
+  display: block;
 }
