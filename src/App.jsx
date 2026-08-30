@@ -5,6 +5,8 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import ContactUs from "./pages/contactus";
 import OrderNow from "./pages/ordernow";
+import WhatsappBtn from "./components/whatsapp-btn";
+
 function App() {
   return (
     <>
@@ -16,6 +18,7 @@ function App() {
         <Route path="contact" element={<ContactUs/>}></Route>
         <Route path="ordernow" element={<OrderNow/>}></Route>
       </Routes>
+      <WhatsappBtn/>
     </>
   )
 }

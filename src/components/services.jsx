@@ -12,7 +12,7 @@ function Services() {
         { id: 4, img: serviceImg4, title: "طب أسنان الأطفال", description: "بيئة صديقة ومحببة للاطفال لضمان تجربة علاجية خالية من الخوف, مع التركيز علي الوقاية والعناية المبكرة" }
     ]
     return (
-        <section className="services-section w-full h-full bg-(--bg1) pt-10 pb-10 lg:pt-20 lg:pb-20">
+        <section name={"services"} className="services-section w-full h-full bg-(--bg1) pt-10 pb-10 lg:pt-20 lg:pb-20">
             <div className="container w-full h-full">
                 <HeadingSection title1="خدماتنا الطبية" title2="رعاية شاملة لصحة فمك وأسنانك" description=".نقدم مجموعة واسعة من العلاجات السنية الوقائية والتجميلية باستخدام احدث التقنيات لضمان افضل النتائج لمرضانا" />
                 <div className="all-services w-full h-full mt-8 lg:mt-16 flex flex-col justify-center gap-4 lg:gap-8 md:flex-row-reverse">

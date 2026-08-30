@@ -3,6 +3,7 @@ import { ArrowLeft } from 'lucide-react';
 import imgTitleHero from "../assets/img-title-hero.svg";
 import experienceImg from "../assets/experience-img.svg";
 import doctorImg from "../assets/doctor-img.png";
+import { Link as ScrollLink } from "react-scroll";
 function HeroSection() {
     return (
         <div className="hero-section w-full h-full pt-12 pb-12 lg:pt-24 lg:pb-24">
@@ -22,9 +23,9 @@ function HeroSection() {
                             <p className="text-[12px] md:text-[14px] text-white font-medium">احجز موعدك الآن</p>
                             <ArrowLeft className="text-white w-4 md:w-6 mt-1" />
                         </Link>
-                        <button className="w-32 h-11 md:w-43 md:h-15 border border-(--textcolor1) rounded-xl cursor-pointer text-[12px] md:text-[16px] text-(--textcolor1) font-medium hover:bg-(--textcolor1) hover:text-white transition-colors">
+                        <ScrollLink to={"services"} smooth={true} duration={500}  className="w-32 h-11 md:w-43 md:h-15 border border-(--textcolor1) rounded-xl cursor-pointer text-[12px] md:text-[16px] text-(--textcolor1) font-medium hover:bg-(--textcolor1) hover:text-white transition-colors flex justify-center items-center">
                             استكشف خدماتنا
-                        </button>
+                        </ScrollLink>
                     </div>
                     <div className="col-information-experience">
                         <img src={experienceImg} alt="experience-img" />

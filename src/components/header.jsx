@@ -16,9 +16,8 @@ function Header() {
     const navigate = useNavigate("");
     const menuLinks = [
         { id: 1, link: "الرئيسية", icon: homeIcon, href: "/" },
-        { id: 2, link: "خدماتنا", icon: servicesIcon, href: "/services" },
-        { id: 3, link: "عن العيادة", icon: aboutIcon, href: "/about" },
-        { id: 4, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
+        { id: 2, link: "عن العيادة", icon: aboutIcon, href: "/about" },
+        { id: 3, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
     ]
     const [showMenu, setShowMenu] = useState(false);
     const [activeLink, setActiveLink] = useState(1);
@@ -52,7 +51,7 @@ function Header() {
                         })}
                     </ul>
                     <div className="order-now flex gap-6 flex-row-reverse items-center">
-                        <Link to={"##"} className="w-35 h-11 bg-(--textcolor1) rounded-xl text-white text-[14px] flex justify-center items-center ">احجز موعدك الآن</Link>
+                        <Link to={"ordernow"} className="w-35 h-11 bg-(--textcolor1) rounded-xl text-white text-[14px] flex justify-center items-center ">احجز موعدك الآن</Link>
                         <div className="col-user w-8 h-8 rounded-full bg-(--textcolor1) flex justify-center items-center">
                             <FaRegUser className="text-white" />
                         </div>
