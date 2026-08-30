@@ -8,6 +8,7 @@
   --headingcolor: #191C1E;
   --bordercolor: #C2C7D1;
   --starcolor: #F59E0B;
+  --bgIcon: #ECEEF0;
 }
 ul{
   list-style: none;
@@ -118,3 +119,15 @@ header .container ul li a.active{
 .questions-commons .container .all-common-questions .answer-question.active{
   display: block;
 }
+/*Start Footer Style*/
+/*@media (max-width: 1050){
+  .footer-section .container .footer-content{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-section .container .footer-content .col-profile,
+  .footer-section .container .footer-content .col-contact,
+  .footer-section .container .footer-content .col-social{
+    width: 50% !important;
+  }
+}*/
