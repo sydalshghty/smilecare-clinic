@@ -24,7 +24,7 @@ function Header() {
 
     return (
         <>
-            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0">
+            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0 shadow">
                 <div className="container w-full h-full flex justify-between items-center flex-row-reverse">
                     <div className="col-bars cursor-pointer" onClick={() => {
                         setShowMenu(!showMenu);

@@ -1,6 +1,13 @@
+import AboutUsHero from "../components/about-us-hero";
+import AboutUSStory from "../components/aboutus-story";
+import OurValues from "../components/our-values";
 function About(){
     return(
-        <h1>about, page</h1>
+        <>
+            <AboutUsHero/>
+            <AboutUSStory/>
+            <OurValues/>
+        </>
     )
 }
 export default About;
