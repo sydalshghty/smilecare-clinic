@@ -63,13 +63,13 @@ header .container ul li a.active{
   left: 0;
 }
 /*End Header Style*/
-/*Start Menu-Mobile-Bottom Style*/
+/*Menu-Mobile-Bottom Style*/
 @media (min-width: 992px){
   .menu-mobile-bottom{
     display: none;
   }
 }
-/*Start Services-Section Style*/
+/*Services-Section Style*/
 @media (max-width: 1100px){
     .services-section .container .all-services{
     width: 100%;
@@ -119,7 +119,7 @@ header .container ul li a.active{
     width: 100%;
   }
 }
-/*Start Questions-Style*/
+/*Questions-Style*/
 .questions-commons .container .all-common-questions .answer-question{
   display: none;
   transition: display 0.5s ease;
@@ -127,9 +127,16 @@ header .container ul li a.active{
 .questions-commons .container .all-common-questions .answer-question.active{
   display: block;
 }
-/*Start Our-Values Style*/
+/*Our-Values Style*/
 @media (max-width: 992px){
   .our-values .container .our-values-content{
     flex-wrap: wrap;
+  }
+}
+/*Our-Teams Style*/
+@media (max-width: 992px){
+  .our-teams .container .all-our-teams{
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }
