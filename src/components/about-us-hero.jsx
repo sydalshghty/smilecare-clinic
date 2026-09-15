@@ -1,5 +1,5 @@
-function AboutUsHero(){
-    return(
+function AboutUsHero() {
+    return (
         <section className="aboutus-hero w-full h-full pt-10 pb-10 lg:pt-20 lg:pb-20 bg-(--bg1)">
             <div className="container w-full h-full flex flex-col gap-6 justify-center items-center">
                 <h2 className="text-[14px] text-(--textcolor1) font-bold">رؤيتنا</h2>

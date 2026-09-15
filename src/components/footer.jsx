@@ -1,13 +1,13 @@
 import logo from "../assets/logo-clinic.svg";
 import { Phone, MapPin, Mail } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
-function Footer(){
+function Footer() {
     const socialMedia = [
-        {id: 1, icon: FaFacebookF, href: "##"},
-        {id: 2, icon: FaTwitter, href: "##"},
-        {id: 3, icon: FaInstagram, href: "##"}
+        { id: 1, icon: FaFacebookF, href: "##" },
+        { id: 2, icon: FaTwitter, href: "##" },
+        { id: 3, icon: FaInstagram, href: "##" }
     ]
-    return(
+    return (
         <section className="footer-section w-full h-full bg-(--bgsection) pt-10 pb-10 md:pt-20 md:pb-20">
             <div className="container w-full h-full">
                 <div className="footer-content w-full h-full pb-8 md:pb-12 flex flex-row-reverse flex-wrap lg:flex-nowrap justify-between">
@@ -22,27 +22,27 @@ function Footer(){
                         <div className="contact-content flex flex-col gap-4 items-end">
                             <div className="col-phone flex gap-2 items-center">
                                 <p className="text-[16px] text-(--linkcolor)">920000000</p>
-                                <Phone className="text-(--textcolor1) w-5 h-5"/>
-                                
+                                <Phone className="text-(--textcolor1) w-5 h-5" />
+
                             </div>
                             <div className="col-location flex gap-2 items-center">
                                 <p className="text-[16px] text-(--linkcolor)">الرياض، حي العليا، شارع التخصصي</p>
-                                <MapPin className="text-(--textcolor1) w-5 h-5"/> 
+                                <MapPin className="text-(--textcolor1) w-5 h-5" />
                             </div>
                             <a className="email flex gap-2 items-center" href="mailto:info@smileclinic.sa">
                                 <p className="text-[16px] text-(--linkcolor)">info@smileclinic.sa</p>
-                                <Mail className="text-(--textcolor1) w-5 h-5"/>
+                                <Mail className="text-(--textcolor1) w-5 h-5" />
                             </a>
                         </div>
                     </div>
                     <div className="col-social flex flex-col gap-4 w-full md:w-1/2 lg:w-1/3 mb-5">
                         <h1 className="text-xl md:text-2xl text-(--headingcolor) font-bold text-end">تابعنا</h1>
                         <div className="all-social flex flex-row-reverse items-end gap-4">
-                            {socialMedia.map((link,index) => {
+                            {socialMedia.map((link, index) => {
                                 const Icon = link.icon;
-                                return(
+                                return (
                                     <a key={link.id} className="col-social w-10 h-10 bg-(--bgIcon) rounded-full flex justify-center items-center" href={link.href}>
-                                        <Icon className="text-(--textcolor1)"/>
+                                        <Icon className="text-(--textcolor1)" />
                                     </a>
                                 )
                             })}
