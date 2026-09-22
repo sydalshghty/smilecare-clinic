@@ -9,6 +9,7 @@
   --bordercolor: #C2C7D1;
   --starcolor: #F59E0B;
   --bgIcon: #ECEEF0;
+  --placeholdercolor: #9CA3AF;
 }
 ul{
   list-style: none;
@@ -138,5 +139,67 @@ header .container ul li a.active{
   .our-teams .container .all-our-teams{
     flex-wrap: wrap;
     justify-content: center;
+  }
+}
+
+/*Start Contact us Page Style*/
+@media (max-width: 520px){
+  .contact-us-heading img{
+    height: 220px;
+  }
+}
+
+@media (max-width: 1050px){
+  .contactus-connect .container{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .contactus-connect .container .col-phone,
+  .contactus-connect .container .col-email,
+  .contactus-connect .container .col-location{
+    width: 48%;
+  }
+}
+@media (max-width: 580px){
+  .contactus-connect .container .col-phone,
+  .contactus-connect .container .col-email,
+  .contactus-connect .container .col-location{
+    width: 100%;
+  }
+}
+
+/*form contact style*/
+@media (max-width: 992px){
+  .form-contact .container .send-message-form,
+  .form-contact .container .work-hours-col{
+    width: 100%;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .form-contact .container .work-hours-col{
+    gap: 40px;
+  }
+}
+@media (max-width: 768px){
+  .form-contact .container .send-message-form h1,
+  .form-contact .container .work-hours-col h2{
+    font-size: 20px;
+  }
+  .form-contact .container .send-message-form p{
+    font-size: 14px;
+    text-align: end;
+  }
+  .form-contact .container .send-message-form form .col-name-phone{
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+    width: 100%;
+  }
+  .form-contact .container .send-message-form form .col-name-phone input{
+    min-width: 100% !important;
+  }
+  .form-contact .container .send-message-form form .col-name-phone .col-name,
+  .form-contact .container .send-message-form form .col-name-phone .col-phone{
+    min-width: 100% !important;
   }
 }
