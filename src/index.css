@@ -181,6 +181,9 @@ header .container ul li a.active{
   }
 }
 @media (max-width: 768px){
+  .form-contact .container{
+    flex-direction: column;
+  }
   .form-contact .container .send-message-form h1,
   .form-contact .container .work-hours-col h2{
     font-size: 20px;
@@ -202,4 +205,22 @@ header .container ul li a.active{
   .form-contact .container .send-message-form form .col-name-phone .col-phone{
     min-width: 100% !important;
   }
+}
+
+/*form-order-page*/
+.form-ordernow .col-services option,
+.form-ordernow .options-time span{
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+.form-ordernow .col-services option.active,
+.form-ordernow .options-time span.active{
+  background-color: var(--textcolor1);
+  color: white;
+}
+
+.form-ordernow .options-time span svg{
+  transition: color 0.5s ease;
+}
+.form-ordernow .options-time span.active svg{
+  color: white;
 }

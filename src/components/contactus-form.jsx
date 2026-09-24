@@ -3,7 +3,6 @@ import HoursIcon from "../assets/hours-icon.svg";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { useState } from "react";
-import emailJS from '@emailjs/browser';
 function ContactusForm() {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
