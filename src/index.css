@@ -224,3 +224,47 @@ header .container ul li a.active{
 .form-ordernow .options-time span.active svg{
   color: white;
 }
+
+@media (min-width: 992px){
+  .form-ordernow,
+  .benfits-ordernow {
+    margin-top: -40px;
+  }
+}
+@media (max-width: 992px){
+  .form-benfits-ordernow .container{
+      flex-direction: column;
+  }
+  .form-benfits-ordernow .container .benfits-ordernow .col-img{
+      width: 50%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+@media (max-width: 768px){
+  .form-ordernow .name-phone-col{  
+    flex-direction: column;
+  }
+  .form-ordernow .name-phone-col .col-name,
+  .form-ordernow .name-phone-col .col-phone{
+    width: 100%;
+  }
+  .form-ordernow .order-date .col-services .all-services{
+    flex-wrap: wrap;
+  }
+  .form-ordernow .order-date .col-services .all-services option{
+    width: 48% !important;
+  }
+  .form-ordernow .data-time-order{
+    flex-direction: column;
+  }
+  .form-ordernow .data-time-order .col-date,
+  .form-ordernow .data-time-order .col-time{
+    width: 100%;
+  }
+}
+@media (max-width: 650px){
+  .form-benfits-ordernow .container .benfits-ordernow .col-img{
+      width: 100%;
+  }
+}

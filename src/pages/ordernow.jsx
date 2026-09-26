@@ -1,6 +1,7 @@
 import HeadingOrderNow from "../components/heading-ordernow";
 import FormOrderNow from "../components/form-ordernow";
 import BenfitsOrderNow from "../components/benfits-ordernow";
+import Footer from "../components/footer";
 function OrderNow() {
     return (
         <>
@@ -11,6 +12,7 @@ function OrderNow() {
                     <BenfitsOrderNow />
                 </div>
             </div>
+            <Footer />
         </>
     )
 }

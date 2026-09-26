@@ -19,15 +19,34 @@ function FormOrderNow() {
     ]
     const [activeService, setActiveService] = useState(false);
     const [activeTime, setActiveTime] = useState(false);
-    const [typeService, setTypeService] = useState("");
-    const [time, setTime] = useState("");
 
-    console.log({
-        typeService, time
-    })
+
+    const [name, setName] = useState(null);
+    const [phone, setPhone] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [typeService, setTypeService] = useState("");
+    const [doctor, setDoctor] = useState("أي طبيب متاح");
+    const [date, setDate] = useState(null);
+    const [time, setTime] = useState("");
+    const [notes, setNotes] = useState(null);
+
 
     return (
-        <form className="form-ordernow w-full flex flex-col gap-10  lg:w-[65%] pt-4 pl-4 pr-4 pb-5 lg:pt-8 lg:pl-8 lg:pr-8 lg:pb-12 rounded-xl bg-white">
+        <form className="form-ordernow w-full flex flex-col gap-10  lg:w-[65%] pt-4 pl-4 pr-4 pb-5 lg:pt-8 lg:pl-8 lg:pr-8 lg:pb-12 rounded-xl bg-white"
+            onSubmit={(e) => {
+                e.preventDefault();
+                console.log({
+                    "name": name,
+                    "phone": phone,
+                    "email": email,
+                    "typeService": typeService,
+                    "doctor": doctor,
+                    "date": date,
+                    "time": time,
+                    "notes": notes
+                })
+            }}
+        >
             <div className="personal-information w-full flex flex-col gap-6 items-end">
                 <div className="col-heading flex gap-3 flex-row-reverse items-center">
                     <img src={numInformation} alt="icon-number" />
@@ -38,11 +57,13 @@ function FormOrderNow() {
                         <div className="col-name flex flex-col gap-2 items-end w-1/2">
                             <label className="text-[14px] text-(--linkcolor)">الاسم الكامل</label>
                             <input type="text" placeholder="أدخل اسمك الكامل" required
+                                onChange={(e) => setName(e.target.value)}
                                 className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--placeholdercolor)" />
                         </div>
                         <div className="col-phone flex flex-col gap-2 items-end w-1/2">
                             <label className="text-[14px] text-(--linkcolor)">رقم الهاتف</label>
                             <input type="text" placeholder="05X XXX XXXX" required
+                                onChange={(e) => setPhone(e.target.value)}
                                 className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--placeholdercolor)"
                             />
                         </div>
@@ -50,6 +71,7 @@ function FormOrderNow() {
                     <div className="email-col w-full flex flex-col gap-2 items-end">
                         <label className="text-[14px] text-(--linkcolor)">البريد الإلكتروني (اختياري)</label>
                         <input type="email" placeholder="example@email.com"
+                            onChange={(e) => setEmail(e.target.value)}
                             className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--placeholdercolor)"
                         />
                     </div>
@@ -78,13 +100,16 @@ function FormOrderNow() {
                 <div className="col-doctor w-full flex flex-col gap-2 items-end">
                     <label className="text-[14px] text-(--linkcolor)">الطبيب المفضل</label>
                     <input type="text" placeholder="أي طبيب متاح"
+                        onChange={(e) => setDoctor(e.target.value)}
                         className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--headingcolor)"
                     />
                 </div>
                 <div className="data-time-order w-full flex flex-row-reverse gap-6">
                     <div className="col-date w-1/2  flex flex-col gap-2 items-end">
                         <label className="text-[14px] text-(--linkcolor)">تاريخ الموعد</label>
-                        <input type="date" className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--headingcolor)" />
+                        <input type="date"
+                            onChange={(e) => setDate(e.target.value)}
+                            className="h-12 bg-(--bg1) min-w-full border-none outline-none text-end pl-4 pr-4 text-[16px] text-(--headingcolor)" />
                     </div>
                     <div className="col-time w-1/2 flex flex-col gap-2 items-end">
                         <label className="text-[14px] text-(--linkcolor)">الوقت المفضل</label>
@@ -112,6 +137,7 @@ function FormOrderNow() {
                     <h2 className="text-xl lg:text-2xl text-(--textcolor1) font-semibold">ملاحظات إضافية</h2>
                 </div>
                 <textarea placeholder="هل تعاني من أي أمراض مزمنة أو لديك استفسار محدد؟"
+                    onChange={(e) => setNotes(e.target.value)}
                     className="w-full mt-6 text-end border-none outline-none h-30 p-4 rounded-lg bg-(--bg1)"
                 >
 
