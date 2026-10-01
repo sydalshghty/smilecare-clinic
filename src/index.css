@@ -171,10 +171,12 @@ header .container ul li a.active{
 /*form contact style*/
 @media (max-width: 992px){
   .form-contact .container .send-message-form,
-  .form-contact .container .work-hours-col{
+  .form-contact .container .work-hours-col,
+  .form-contact .container .success-message-content{
     width: 100%;
     border-radius: 12px;
     padding: 20px;
+    margin-bottom: 20px;
   }
   .form-contact .container .work-hours-col{
     gap: 40px;

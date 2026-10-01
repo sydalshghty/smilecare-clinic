@@ -3,78 +3,106 @@ import HoursIcon from "../assets/hours-icon.svg";
 import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa6";
 import { useState } from "react";
+import SuccessMessage from "./success-message";
 function ContactusForm() {
+    const baseUrl = import.meta.env.VITE_BASE_URL;
+
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
 
+    const [successMessage, setSuccessMessage] = useState(false);
+
     const sendFormData = async (e) => {
         e.preventDefault();
-        console.log({
-            "name": name,
-            "phone": phone,
-            "subject": subject,
-            "message": message
-        })
+        try {
+            const newMessageFun = await fetch(`${baseUrl}/api/v1/messages/add-new-message`,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        name,
+                        phone,
+                        subject,
+                        message
+                    })
+                }
+            )
+            const data = await newMessageFun.json();
+            console.log({
+                "data": data,
+                "msg": "data is send successfully"
+            });
+            setSuccessMessage(!successMessage);
+        }
+        catch (error) {
+            console.error({ "error": error.message })
+        }
     }
 
 
     return (
         <section className="form-contact w-full h-full pt-10 pb-10 lg:pt-20 lg:pb-20 bg-[#F2F4F6]">
             <div className="container w-full h-full flex flex-row-reverse">
-                <div className="send-message-form w-[60%] bg-white  p-16 rounded-tr-3xl rounded-br-3xl flex flex-col justify-end items-end gap-8">
-                    <div className="col-heading flex flex-col gap-2">
-                        <h1 className="text-end text-[32px] text-(--headingcolor) font-bold">أرسل لنا رسالة</h1>
-                        <p className="text-[16px] text-(--linkcolor)">يرجى تعبئة النموذج أدناه وسيقوم فريقنا بالتواصل معك في أقرب وقت ممكن</p>
-                    </div>
-                    <form className="w-full flex flex-col gap-6" onSubmit={sendFormData}>
-                        <div className="col-name-phone min-w-full flex flex-row-reverse gap-6">
-                            <div className="col-name flex flex-col items-end gap-2 w-1/2">
-                                <label className="text-[16px] text-(--linkcolor)">الاسم الكامل</label>
-                                <input
-                                    onChange={(e) => {
-                                        setName(e.target.value)
-                                    }}
-                                    type="text" placeholder="أدخل اسمك" required
-                                    className="min-w-full text-end h-12 pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)"
-                                />
+                {!successMessage ?
+                    <div className="send-message-form w-[60%] bg-white  p-16 rounded-tr-3xl rounded-br-3xl flex flex-col justify-end items-end gap-8">
+                        <div className="col-heading flex flex-col gap-2">
+                            <h1 className="text-end text-[32px] text-(--headingcolor) font-bold">أرسل لنا رسالة</h1>
+                            <p className="text-[16px] text-(--linkcolor)">يرجى تعبئة النموذج أدناه وسيقوم فريقنا بالتواصل معك في أقرب وقت ممكن</p>
+                        </div>
+                        <form className="w-full flex flex-col gap-6" onSubmit={sendFormData}>
+                            <div className="col-name-phone min-w-full flex flex-row-reverse gap-6">
+                                <div className="col-name flex flex-col items-end gap-2 w-1/2">
+                                    <label className="text-[16px] text-(--linkcolor)">الاسم الكامل</label>
+                                    <input
+                                        onChange={(e) => {
+                                            setName(e.target.value)
+                                        }}
+                                        type="text" placeholder="أدخل اسمك" required
+                                        className="min-w-full text-end h-12 pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)"
+                                    />
+                                </div>
+                                <div className="col-phone flex flex-col items-end gap-2 w-1/2">
+                                    <label className="text-[16px] text-(--linkcolor)">رقم الجوال</label>
+                                    <input
+                                        onChange={(e) => {
+                                            setPhone(e.target.value)
+                                        }}
+                                        type="phone" placeholder="05x xxx xxxx" required
+                                        className="min-w-full text-end h-12 pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)" />
+                                </div>
                             </div>
-                            <div className="col-phone flex flex-col items-end gap-2 w-1/2">
-                                <label className="text-[16px] text-(--linkcolor)">رقم الجوال</label>
+                            <div className="col-subject-message flex flex-col items-end gap-2">
+                                <label className="text-[16px] text-(--linkcolor)">موضوع الرسالة</label>
                                 <input
                                     onChange={(e) => {
-                                        setPhone(e.target.value)
+                                        setSubject(e.target.value)
                                     }}
-                                    type="phone" placeholder="05x xxx xxxx" required
+                                    type="text" placeholder="اختر موضوع الاستفسار" required
                                     className="min-w-full text-end h-12 pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)" />
                             </div>
-                        </div>
-                        <div className="col-subject-message flex flex-col items-end gap-2">
-                            <label className="text-[16px] text-(--linkcolor)">موضوع الرسالة</label>
-                            <input
-                                onChange={(e) => {
-                                    setSubject(e.target.value)
-                                }}
-                                type="text" placeholder="اختر موضوع الاستفسار" required
-                                className="min-w-full text-end h-12 pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)" />
-                        </div>
-                        <div className="col-message flex flex-col items-end gap-2">
-                            <label className="text-[16px] text-(--linkcolor)">الرسالة</label>
-                            <input
-                                onChange={(e) => {
-                                    setMessage(e.target.value)
-                                }}
-                                type="text" placeholder="...اكتب تفاصيل رسالتك هنا" required
-                                className="min-w-full text-end h-[120px] pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)" />
-                        </div>
-                        <button
-                            type="submit" className="w-42.5 h-14 bg-(--textcolor1) rounded-xl flex flex-row-reverse justify-center items-center gap-2">
-                            <p className="text-white text-[16px]">إرسال الرسالة</p>
-                            <img src={SendIcon} alt="send-icon" className="mt-1" />
-                        </button>
-                    </form>
-                </div>
+                            <div className="col-message flex flex-col items-end gap-2">
+                                <label className="text-[16px] text-(--linkcolor)">الرسالة</label>
+                                <input
+                                    onChange={(e) => {
+                                        setMessage(e.target.value)
+                                    }}
+                                    type="text" placeholder="...اكتب تفاصيل رسالتك هنا" required
+                                    className="min-w-full text-end h-[120px] pl-4 pr-4 bg-(--bgsection) rounded-xl outline-none text-[16px] text-(--placeholdercolor)" />
+                            </div>
+                            <button
+                                type="submit" className="w-42.5 h-14 bg-(--textcolor1) rounded-xl flex flex-row-reverse justify-center items-center gap-2 cursor-pointer">
+                                <p className="text-white text-[16px]">إرسال الرسالة</p>
+                                <img src={SendIcon} alt="send-icon" className="mt-1" />
+                            </button>
+                        </form>
+                    </div>
+                    :
+                    <SuccessMessage name={name} phone={phone} subject={subject} />
+                }
                 <div className="work-hours-col w-[40%] bg-[#ECEEF0] rounded-tl-3xl rounded-bl-3xl p-12 flex flex-col justify-between items-end">
                     <div className="col-information-time w-full">
                         <div className="col-title flex flex-row-reverse gap-2 mb-6">
