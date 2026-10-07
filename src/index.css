@@ -270,3 +270,68 @@ header .container ul li a.active{
       width: 100%;
   }
 }
+
+/*Start Hero-Section-New Style*/
+@media (max-width: 420px){
+  .hero-section-new .container .col-btns{
+  flex-direction: column-reverse;
+}
+}
+/*End Hero-Section-New Style*/
+/*Start Experience-Clinic Style*/
+@media (max-width: 650px){
+  .experience-clinic .container{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .experience-clinic .container div{
+    width: 47%;
+  }
+}
+@media (max-width: 420px){
+  .experience-clinic .container{
+    gap: 10px;
+  }
+  .experience-clinic .container div span{
+    font-size: 18px;
+  }
+  .experience-clinic .container div p{
+    font-size: 10px;
+  }
+}
+
+/*Start services-new-section Style*/
+.services-new-section .container .all-services-new .col-service-new{
+  transition: transform  0.5s ease;
+}
+.services-new-section .container .all-services-new .col-service-new:hover{
+  transform: translateY(-8px);
+}
+@media (max-width: 992px){
+  .services-new-section .container .heading-services .heading-content{
+    width: 60%;
+  }
+  .services-new-section .container .all-services-new .col-service-new{
+    width: 320px;
+  }
+}
+@media (max-width: 650px){
+  .services-new-section .container .all-services-new .col-service-new{
+    width: 100%;
+    height: fit-content;
+  }
+  .services-new-section .container .all-services-new .col-service-new img{
+    width: 40px;
+    height: 40px;
+  }
+  .services-new-section .container .all-services-new{
+    justify-content: center;
+  }
+  .services-new-section .container .heading-services .heading-content{
+    width: 100%;
+  }
+  .services-new-section .container .heading-services a{
+    display: none;
+  }
+}

@@ -1,3 +1,6 @@
+import HeroSectionNew from "../components/hero-section-new";
+import ExperienceClinic from "../components/experience-clinic";
+import ServicesNew from "../components/services-new";
 import HeroSection from "../components/hero-section";
 import WhyUs from "../components/whyus";
 import Services from "../components/services";
@@ -7,12 +10,10 @@ import Footer from "../components/footer";
 function Home() {
     return (
         <>
-            <HeroSection />
-            <WhyUs />
-            <Services />
-            <OverviewClients/>
-            <QuestionsCommons/>
-            <Footer/>
+            <HeroSectionNew />
+            <ExperienceClinic />
+            <ServicesNew />
+            <Footer />
         </>
     )
 }
