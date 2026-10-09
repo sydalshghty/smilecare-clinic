@@ -335,3 +335,32 @@ header .container ul li a.active{
     display: none;
   }
 }
+/*Start why-choose-us Style*/
+@media (max-width: 992px){
+  .why-choose-us .container{
+    flex-direction: column-reverse;
+  }
+}
+
+/*Start stories-success Style*/
+@media (max-width: 992px){
+  .stories-success .container .all-stories{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .stories-success .container .all-stories .col-story{
+    width: 48%;
+  }
+}
+
+@media (max-width: 650px) {
+  .stories-success .container .all-stories .col-story{
+    width: 100%;
+  }
+}
+
+
+
+
+
+

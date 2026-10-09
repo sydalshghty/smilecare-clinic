@@ -1,6 +1,8 @@
 import HeroSectionNew from "../components/hero-section-new";
 import ExperienceClinic from "../components/experience-clinic";
 import ServicesNew from "../components/services-new";
+import WhyChooseUS from "../components/why-Chooseus";
+import StoriesSuccess from "../components/stories-success";
 import HeroSection from "../components/hero-section";
 import WhyUs from "../components/whyus";
 import Services from "../components/services";
@@ -13,6 +15,8 @@ function Home() {
             <HeroSectionNew />
             <ExperienceClinic />
             <ServicesNew />
+            <WhyChooseUS/>
+            <StoriesSuccess/>
             <Footer />
         </>
     )
