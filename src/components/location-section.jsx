@@ -4,7 +4,7 @@ import LocationImg from "../assets/location-img.png";
 import PhoneIcon from "../assets/mobile-icon.svg";
 function LocationSection() {
     return (
-        <section className="loctaion-section w-full h-full bg-(--bgsection)">
+        <section className="loctaion-section w-full h-full bg-(--bgsection) pb-10">
             <div className="container w-full h-full">
                 <div className="content-location w-full h-full bg-[#E6E8EA] p-12 rounded-3xl flex flex-row-reverse gap-8">
                     <div className="content-text flex flex-col gap-4 text-end">

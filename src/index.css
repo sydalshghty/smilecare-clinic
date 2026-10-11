@@ -400,3 +400,29 @@ header .container ul li a.active{
     flex-direction: column-reverse;
   }
 }
+
+
+/*Start footer*/
+.footer-section .container .footer-content{
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 992px){
+  .footer-section .container .footer-content .col-profile,
+  .footer-section .container .footer-content .all-links,
+  .footer-section .container .footer-content .col-contact,
+  .footer-section .container .footer-content .times-work-col{
+    width: 48%;
+  }
+}
+@media (max-width: 650px){
+  .footer-section .container .footer-content .col-profile,
+  .footer-section .container .footer-content .all-links,
+  .footer-section .container .footer-content .col-contact,
+  .footer-section .container .footer-content .times-work-col{
+    width: 100%;
+  }
+  .footer-section .container .footer-content .col-profile{
+    margin-bottom: 0px;
+  }
+}
