@@ -426,3 +426,38 @@ header .container ul li a.active{
     margin-bottom: 0px;
   }
 }
+
+
+/*Start Hero-Services Style*/
+.hero-services{
+  background-image: url('./assets/hero-services-banner.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+@media (max-width: 650px){
+  .hero-services .all-benfits{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .hero-services .all-benfits .col-benfit{
+    width: 45%;
+  }
+  .hero-services .all-services{
+    padding: 16px;
+  }
+}
+
+
+/*Start all-services-section*/
+@media (max-width: 650px){
+  .all-services-section .container .col-heading{
+  flex-direction: column;
+  width: 100%;
+}
+.all-services-section .container .col-heading div{
+  width: 100%;
+}
+}
