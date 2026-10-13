@@ -452,6 +452,20 @@ header .container ul li a.active{
 
 
 /*Start all-services-section*/
+.all-services-section .container .all-services .col-service{
+  transition: transform 0.5s ease;
+}
+.all-services-section .container .all-services .col-service:hover{
+  transform: translateY(-12px);
+}
+@media (max-width: 992px){
+  .all-services-section .container .all-services{
+    gap: 12px;
+  }
+  .all-services-section .container .all-services .col-service{
+    width: 49%;
+  }
+}
 @media (max-width: 650px){
   .all-services-section .container .col-heading{
   flex-direction: column;
@@ -460,4 +474,8 @@ header .container ul li a.active{
 .all-services-section .container .col-heading div{
   width: 100%;
 }
+.all-services-section .container .all-services .col-service{
+    width: 100%;
+    padding: 12px;
+  }
 }

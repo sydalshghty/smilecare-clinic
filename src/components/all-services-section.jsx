@@ -14,6 +14,10 @@ import ServiceImg7 from "../assets/service-img-77.svg";
 import ServiceIcon7 from "../assets/service-icon-777.svg";
 import ServiceImg8 from "../assets/service-img-88.svg";
 import ServiceIcon8 from "../assets/service-icon-888.svg";
+import CheckIcon from "../assets/check-icon.svg";
+import TimeIcon from "../assets/time-icon.svg";
+import { Link } from "react-router-dom";
+
 function AllServicesSection() {
     const allServices = [
         {
@@ -40,12 +44,11 @@ function AllServicesSection() {
                 { id: 2, name: "فترة تعافي قياسية دون تورم أو نزيف" },
                 { id: 3, name: "دليل جراحي رقمي مطبوع بتقنية ثلاثي الابعاد" }
             ],
-            time: `جلسة واحدة للزراعة (30 دقيقة
-                    للسن)`
+            time: `جلسة واحدة (30 دقيقة)`
         },
         {
             id: 3, img: ServiceImg3, icon: ServiceIcon3,
-            title: "تقويم الأسنان الشفاف (Invisalign)",
+            title: "تقويم الأسنان الشفاف",
             description: `قوالب شفافة متحركة تصنع خصيصاً لتعديل اصطفاف
                             الأسنان بأريحية ونظافة تامة بدون أسلاك أو حاصرات
                             معدنية محرجة`,
@@ -81,8 +84,8 @@ function AllServicesSection() {
                 { id: 1, name: "تفتيح فعال بدرجات تصل إلى 8 درجات بياض" },
                 { id: 2, name: "قص وتنسيق الابتسامة اللثوية بدون قطب جراحية" },
                 {
-                    id: 3, name: `تطهير عميق للجيوب اللثوية وقتل البكتيريا بنسبة
-                        99%` }
+                    id: 3, name: `تطهير عميق للجيوب اللثوية وقتل البكتيريا
+                        ` }
             ],
             time: "جلسة واحدة (45 دقيقة)",
         },
@@ -150,6 +153,42 @@ function AllServicesSection() {
                     </div>
                     <p className="w-full md:w-[45%] text-end text-[14px] lg:text-[16px] text-(--linkcolor)">تعتمد كافة أقسامنا على بروتوكولات تعقيم صارمة، وطاقم من الاستشاريين
                         المتخصصين مع محاكاة ثلاثية الأبعاد قبل بدء العلاج</p>
+                </div>
+                <div className="all-services pt-10 lg:pt-14 w-full h-full flex flex-row-reverse flex-wrap justify-start gap-8">
+                    {allServices.map((service, index) => {
+                        return (
+                            <div key={service.id} className="col-service w-[30%] bg-white p-7 rounded-3xl flex flex-col gap-6 items-end">
+                                <div className="col-img-service w-full flex flex-row-reverse items-center justify-between">
+                                    <img src={service.img} alt="service-img" />
+                                    <img src={service.icon} alt="service-icon" />
+                                </div>
+                                <h2 className="title-service text-[16px] text-(--textcolor1)">{service.title}</h2>
+                                <p className="description-service text-[16px] text-(--linkcolor) text-end">{service.description}</p>
+                                <div className="all-benfits flex flex-col gap-2.5">
+                                    {service.benfits.map((item, index) => {
+                                        return (
+                                            <div key={item.id} className="col-benfit w-full flex flex-row-reverse items-center gap-2">
+                                                <img src={CheckIcon} alt="icon-check" />
+                                                <p className="text-[16px] text-(--headingcolor) text-end">{item.name}</p>
+                                            </div>
+                                        )
+                                    })}
+                                </div>
+                                <div className="col-time w-full p-4 bg-(--bgsection) flex flex-row-reverse justify-between items-center rounded-2xl">
+                                    <p className="text-[16px] text-(--linkcolor)">:متوسط المدة</p>
+                                    <div className="flex flex-row-reverse gap-1 items-center">
+                                        <img src={TimeIcon} alt="time-icon" />
+                                        <p className="text-[16px] text-(--textcolor1) font-semibold">{service.time}</p>
+                                    </div>
+                                </div>
+                                <Link to={"/ordernow"}
+                                    onClick={() => {
+                                        window.scrollTo({ top: 0 })
+                                    }}
+                                    className="w-full pt-3 pb-3 pl-4 pr-4 bg-(--textcolor1) rounded-2xl text-center text-[16px]  text-white">تفاصيل وحجز استشارة</Link>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </section>

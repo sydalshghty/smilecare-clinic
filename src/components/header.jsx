@@ -16,6 +16,7 @@ function Header() {
     const navigate = useNavigate("");
     const menuLinks = [
         { id: 1, link: "الرئيسية", icon: homeIcon, href: "/" },
+        { id: 2, link: "خدماتنا", icon: servicesIcon, href: "/services" },
         { id: 2, link: "عن العيادة", icon: aboutIcon, href: "/about" },
         { id: 3, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
     ]
@@ -90,8 +91,8 @@ function Header() {
                         <p className="text-[18px] text-(--textcolor1) font-semibold">عيادة الابتسامة لطب الأسنان</p>
                     </div>
                     <ul className="flex flex-col items-end gap-2 pt-4 pb-4">
-                        {menuLinks.map((link,index) => {
-                            return(
+                        {menuLinks.map((link, index) => {
+                            return (
                                 <li className="w-full flex justify-between items-center flex-row-reverse pt-3 pb-3" key={link.id}>
                                     <Link to={link.href} className="flex flex-row-reverse gap-3" onClick={() => {
                                         setShowMenu(!showMenu);
@@ -103,8 +104,8 @@ function Header() {
                                 </li>
                             )
                         })}
-                      
-                        
+
+
                     </ul>
                     <button className="min-w-full h-13 bg-(--textcolor1) rounded-lg cursor-pointer" onClick={() => {
                         navigate("/ordernow")
