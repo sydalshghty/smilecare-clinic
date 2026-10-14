@@ -479,3 +479,47 @@ header .container ul li a.active{
     padding: 12px;
   }
 }
+
+/*service-section-three style*/
+.service-section-three .container .all-services-section3 .col-service{
+  transition: transform 0.5s ease;
+}
+.service-section-three .container .all-services-section3 .col-service:hover{
+  transform: translateY(-8px);
+}
+@media (max-width: 992px){
+  .service-section-three .container .all-services-section3{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .service-section-three .container .all-services-section3 .col-service{
+    width: 45%;
+  }
+}
+@media (max-width: 650px){
+  .service-section-three .container .all-services-section3 .col-service{
+    width: 100%;
+  }
+}
+
+/*service-section-four style*/
+@media (max-width: 992px){
+  .service-section-four .container{
+    flex-direction: column;
+  }
+  .service-section-four .container .col-img{
+    width: 60%;
+    margin: auto;
+  }
+  .service-section-four .container .content-technologies{
+    width: 100%;
+  }
+}
+@media (max-width: 650px){
+  .service-section-four .container .col-img{
+    width: 80%;
+  }
+  .service-section-four .container .content-technologies .col-technology{
+    width: 100%;
+  }
+}
