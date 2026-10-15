@@ -523,3 +523,32 @@ header .container ul li a.active{
     width: 100%;
   }
 }
+
+/*service-ordernow Style*/
+
+@media (max-width: 992px){
+  .service-ordernow .container .content-section{
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px;
+  }
+  .service-ordernow .container .content-section .col-text{
+    width: 100%;
+  }
+}
+@media (max-width: 768px){
+  .service-ordernow .container .content-section{
+    padding: 20px;
+  }
+  .service-ordernow .container .content-section .col-btns{
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  .service-ordernow .container .content-section .col-btns a{
+    margin-bottom: 8px;
+  }
+  .service-ordernow .container .content-section .col-btns a,
+  .service-ordernow .container .content-section .col-btns div{
+    width: 100%;
+  }
+}
