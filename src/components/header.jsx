@@ -17,15 +17,15 @@ function Header() {
     const menuLinks = [
         { id: 1, link: "الرئيسية", icon: homeIcon, href: "/" },
         { id: 2, link: "خدماتنا", icon: servicesIcon, href: "/services" },
-        { id: 2, link: "عن العيادة", icon: aboutIcon, href: "/about" },
-        { id: 3, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
+        { id: 3, link: "عن العيادة", icon: aboutIcon, href: "/about" },
+        { id: 4, link: "اتصل بنا", icon: contactIcon, href: "/contact" }
     ]
     const [showMenu, setShowMenu] = useState(false);
     const [activeLink, setActiveLink] = useState(1);
 
     return (
         <>
-            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0 shadow">
+            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0 shadow z-50">
                 <div className="container w-full h-full flex justify-between items-center flex-row-reverse">
                     <div className="col-bars cursor-pointer" onClick={() => {
                         setShowMenu(!showMenu);

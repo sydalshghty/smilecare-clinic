@@ -552,3 +552,102 @@ header .container ul li a.active{
     width: 100%;
   }
 }
+
+/*Start About-Hero-Section*/
+.about-hero-section{
+  background-image: url('./assets/about-hero-banner-22.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: #F0F4F9;
+}
+@media (max-width: 650px){
+    .about-hero-section .container .all-informations{
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+  }
+  .about-hero-section .container .all-informations .col-information{
+      width: 46%;
+  }
+}
+@media (max-width: 420px){
+  .about-hero-section .container .all-informations{
+    gap: 8px;
+  }
+  .about-hero-section .container .all-informations .col-information{
+      width: 48%;
+  }
+  .about-hero-section .container .all-informations .col-information h1{
+    font-size: 18px;
+  }
+  .about-hero-section .container .all-informations .col-information p{
+    font-size: 12px;
+  }
+}
+/*End About-Hero-Section*/
+
+/*Start About-History-Section*/
+@media (max-width: 992px){
+  .about-history-section .container{
+    flex-direction: column;
+    gap: 24px;
+  }
+  .about-history-section .container .col-information{
+    width: 100%;
+  }
+}
+@media (max-width: 650px){
+  .about-history-section .container .col-information h1 span{
+    font-size: 18px;
+  }
+  .about-history-section .container .all-informations .col-text{
+    width: 100%;
+  }
+  .about-history-section .container .col-message-img{
+    display: none;
+  }
+}
+/*End About-History-Section*/
+
+/*Start About-ourValues*/
+.about-ourValues .container .all-values .col-value{
+  transition: transform 0.5s ease;
+}
+.about-ourValues .container .all-values .col-value:hover{
+  transform: translateY(-8px);
+}
+@media (max-width: 992px){
+  .about-ourValues .container .all-values{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .about-ourValues .container .all-values .col-value{
+    width: 48%;
+  }
+}
+@media (max-width: 650px){
+  .about-ourValues .container .all-values .col-value{
+    width: 100%;
+    padding: 16px;
+  }
+}
+/*End About-ourValues*/
+
+/*Start Our-Teams*/
+@media (max-width: 992px){
+  .our-teams .container .all-our-teams{
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  .our-teams .container .all-our-teams .col-doctor{
+    width: 47% !important;
+  }
+}
+@media (max-width: 650px){
+  .our-teams .container .all-our-teams .col-doctor{
+    width: 100% !important;
+  }
+}
+/*End Our-Teams*/

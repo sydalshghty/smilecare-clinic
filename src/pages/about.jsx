@@ -1,15 +1,15 @@
-import AboutUsHero from "../components/about-us-hero";
-import AboutUSStory from "../components/aboutus-story";
-import OurValues from "../components/our-values";
 import OurTeams from "../components/our-teams";
 import AboutusOrdernow from "../components/aboutus-ordernow";
+import AboutHero from "../components/about-hero";
+import AboutHistory from "../components/about-history";
+import AboutOurValues from "../components/about-ourValues";
 import Footer from "../components/footer";
 function About() {
     return (
         <>
-            <AboutUsHero />
-            <AboutUSStory />
-            <OurValues />
+            <AboutHero />
+            <AboutHistory />
+            <AboutOurValues />
             <OurTeams />
             <AboutusOrdernow />
             <Footer />
