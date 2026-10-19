@@ -588,7 +588,7 @@ header .container ul li a.active{
 /*End About-Hero-Section*/
 
 /*Start About-History-Section*/
-@media (max-width: 992px){
+@media (max-width: 1100px){
   .about-history-section .container{
     flex-direction: column;
     gap: 24px;
@@ -617,7 +617,7 @@ header .container ul li a.active{
 .about-ourValues .container .all-values .col-value:hover{
   transform: translateY(-8px);
 }
-@media (max-width: 992px){
+@media (max-width: 1100px){
   .about-ourValues .container .all-values{
     flex-wrap: wrap;
     justify-content: center;
@@ -635,7 +635,7 @@ header .container ul li a.active{
 /*End About-ourValues*/
 
 /*Start Our-Teams*/
-@media (max-width: 992px){
+@media (max-width: 1100px){
   .our-teams .container .all-our-teams{
     flex-wrap: wrap;
     justify-content: center;
@@ -651,3 +651,47 @@ header .container ul li a.active{
   }
 }
 /*End Our-Teams*/
+
+/*Start About-NewTools*/
+@media (max-width: 1300px){
+  .about-newTools .container{
+    flex-direction: column;
+  }
+  .about-newTools .container .allnew-tools{
+    margin: auto;
+   /* flex-wrap: wrap;
+    width: 70%;*/
+  }
+  /*.about-newTools .container .allnew-tools .col-newTool{
+    width: 40%;
+  }*/
+}
+@media (max-width: 1100px){
+  .about-newTools .container .allnew-tools{
+    gap: 8px;
+    width: 100%;
+  }
+}
+@media (max-width: 650px){
+  .about-newTools .container .allnew-tools{
+    width: 100%;
+  }
+  .about-newTools .container .allnew-tools .col-newTool{
+      width: 100%;
+  }
+}
+/*End About-NewTools*/
+/*Start best-rating*/
+@media (max-width: 768px){
+  .best-rating{
+    display: none;
+  }
+}
+/*End best-rating*/
+/*Start Aboutus-ordernow*/
+@media (max-width: 768px){
+  .aboutus-ordernow .container .order-contact-btns{
+    flex-direction: column;
+  }
+}
+/*End Aboutus-ordernow*/

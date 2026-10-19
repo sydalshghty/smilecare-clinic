@@ -25,7 +25,7 @@ function Header() {
 
     return (
         <>
-            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0 shadow z-50">
+            <header className="w-full h-20 bg-(--bg1) sticky top-0 left-0 shadow z-40">
                 <div className="container w-full h-full flex justify-between items-center flex-row-reverse">
                     <div className="col-bars cursor-pointer" onClick={() => {
                         setShowMenu(!showMenu);
@@ -62,7 +62,7 @@ function Header() {
                     </div>
                 </div>
             </header>
-            <div className={`${showMenu ? "show" : ""} menu-mobile w-full h-full fixed top-0 -left-full bg-white`}>
+            <div className={`${showMenu ? "show" : ""} menu-mobile w-full h-full fixed top-0 -left-full bg-white z-50`}>
                 <div className="header-menu w-full h-16 bg-(--bg1) flex flex-row-reverse justify-between items-center pl-5 pr-5">
                     <div className="close-menu cursor-pointer" onClick={() => {
                         setShowMenu(!showMenu);
