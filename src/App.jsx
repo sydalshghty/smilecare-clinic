@@ -8,7 +8,6 @@ import OrderNow from "./pages/ordernow";
 import Services from "./pages/services";
 import WhatsappBtn from "./components/whatsapp-btn";
 
-
 function App() {
   return (
     <>

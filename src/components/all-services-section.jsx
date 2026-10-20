@@ -162,7 +162,7 @@ function AllServicesSection() {
                                     <img src={service.img} alt="service-img" />
                                     <img src={service.icon} alt="service-icon" />
                                 </div>
-                                <h2 className="title-service text-[16px] text-(--textcolor1)">{service.title}</h2>
+                                <h2 className="title-service text-[16px] text-(--textcolor1) text-end">{service.title}</h2>
                                 <p className="description-service text-[16px] text-(--linkcolor) text-end">{service.description}</p>
                                 <div className="all-benfits flex flex-col gap-2.5">
                                     {service.benfits.map((item, index) => {

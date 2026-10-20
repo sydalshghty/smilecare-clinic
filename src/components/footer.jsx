@@ -1,10 +1,16 @@
 import logo from "../assets/logo-clinic.svg";
-import { Phone, MapPin, Mail } from 'lucide-react';
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import MapIcon from "../assets/map-icon.svg";
 import PhoneIcon from "../assets/phone-icon-11.svg";
 import MailIcon from "../assets/email-icon-11.svg";
+import { Link } from "react-router-dom";
 function Footer() {
+    const allLinks = [
+        { id: 1, name: "عن العيادة", href: "/about" },
+        { id: 2, name: "تواصل معنا", href: "/contact" },
+        { id: 3, name: "خدماتنا", href: "/services" },
+        { id: 4, name: "حجز المواعيد والاستشارات", href: "/ordernow" }
+    ]
     const socialMedia = [
         { id: 1, icon: FaFacebookF, href: "##" },
         { id: 2, icon: FaTwitter, href: "##" },
@@ -35,18 +41,17 @@ function Footer() {
                     <div className="all-links flex flex-col gap-3 justify-start items-end w-1/4">
                         <label className="text-[16px] font-bold text-(--textcolor1)">روابط هامة</label>
                         <ul className="flex flex-col gap-1 justify-start items-end">
-                            <li>
-                                <a href="/about" className="text-[14px] text-(--linkcolor)">عن العيادة</a>
-                            </li>
-                            <li>
-                                <a href="/contact" className="text-[14px] text-(--linkcolor)">تواصل معنا</a>
-                            </li>
-                            <li>
-                                <a href="/services" className="text-[14px] text-(--linkcolor)">خدماتنا</a>
-                            </li>
-                            <li>
-                                <a href="/ordernow" className="text-[14px] text-(--linkcolor)">حجز المواعيد والاستشارات</a>
-                            </li>
+                            {allLinks.map((link, index) => {
+                                return (
+                                    <li key={link.id}>
+                                        <Link
+                                            onClick={() => {
+                                                window.scrollTo({ top: 0 })
+                                            }}
+                                            to={link.href} className="text-[14px] text-(--linkcolor)">{link.name}</Link>
+                                    </li>
+                                )
+                            })}
                         </ul>
                     </div>
                     <div className="col-contact flex flex-col gap-3 w-1/4">

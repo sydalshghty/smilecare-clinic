@@ -41,13 +41,13 @@ header .container ul li a.active{
     display: none;
   }
 }
-@media (min-width: 992px){
+@media (min-width: 1100px){
   header .container .col-bars,
   header .container .doctor-img{
     display: none;
   }
 }
-@media (max-width: 992px){
+@media (max-width: 1100px){
   header{
     height: 64px;
   }
@@ -169,7 +169,10 @@ header .container ul li a.active{
 }
 
 /*form contact style*/
-@media (max-width: 992px){
+@media (max-width: 1100px){
+  .form-contact .container{
+    flex-direction: column;
+  }
   .form-contact .container .send-message-form,
   .form-contact .container .work-hours-col,
   .form-contact .container .success-message-content{
@@ -183,9 +186,6 @@ header .container ul li a.active{
   }
 }
 @media (max-width: 768px){
-  .form-contact .container{
-    flex-direction: column;
-  }
   .form-contact .container .send-message-form h1,
   .form-contact .container .work-hours-col h2{
     font-size: 20px;
@@ -233,9 +233,12 @@ header .container ul li a.active{
     margin-top: -40px;
   }
 }
-@media (max-width: 992px){
+@media (max-width: 1200px){
   .form-benfits-ordernow .container{
       flex-direction: column;
+  }
+  .form-benfits-ordernow .container form{
+    width: 100%;
   }
   .form-benfits-ordernow .container .benfits-ordernow .col-img{
       width: 50%;
@@ -458,7 +461,7 @@ header .container ul li a.active{
 .all-services-section .container .all-services .col-service:hover{
   transform: translateY(-12px);
 }
-@media (max-width: 992px){
+@media (max-width: 1280px){
   .all-services-section .container .all-services{
     gap: 12px;
   }
@@ -487,7 +490,7 @@ header .container ul li a.active{
 .service-section-three .container .all-services-section3 .col-service:hover{
   transform: translateY(-8px);
 }
-@media (max-width: 992px){
+@media (max-width: 1300px){
   .service-section-three .container .all-services-section3{
     flex-wrap: wrap;
     justify-content: center;
@@ -503,7 +506,7 @@ header .container ul li a.active{
 }
 
 /*service-section-four style*/
-@media (max-width: 992px){
+@media (max-width: 1300px){
   .service-section-four .container{
     flex-direction: column;
   }
@@ -526,7 +529,7 @@ header .container ul li a.active{
 
 /*service-ordernow Style*/
 
-@media (max-width: 992px){
+@media (max-width: 1300px){
   .service-ordernow .container .content-section{
     flex-direction: column;
     gap: 20px;
@@ -617,7 +620,7 @@ header .container ul li a.active{
 .about-ourValues .container .all-values .col-value:hover{
   transform: translateY(-8px);
 }
-@media (max-width: 1100px){
+@media (max-width: 1300px){
   .about-ourValues .container .all-values{
     flex-wrap: wrap;
     justify-content: center;
